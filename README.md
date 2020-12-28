@@ -61,44 +61,6 @@ Script ini di modifikasi sama saya sendiri Aris187 ID.
 > Tinggal scan kode qr yeee...done
 ```
 
-## FEATURES  <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Earth.gif" width="29px">
-
-| AR15BOT      |                   Feature        |
-| :-----------: | :------------------------------: |
-|       ✅       | Sticker Creator                  |
-|       ✅       | Nulis                            |
-|       ✅       | add                          |
-|       ✅       | kick                     |
-|       ✅       | demote                     |
-|       ✅       | promote                       |
-|       ✅       | bc           |
-|       ✅       | welcome                           |
-|       ✅       | Youtube Downloader               |
-|       ✅       | simi                           |
-|       ✅       | left                    |
-|       ✅       | setpp                    |
-|       ✅       | group buka/tutup                   |
-|       ✅       | nsfwloli                 |
-|       ✅       | loli              |
-|       ✅       | tts                            |
-|       ✅       | tiktokstalk          |
-|       ✅       | tiktok             |
-|       ✅       | tagall               |
-|       ✅       | clearall             |
-|       ✅       | block        |
-|       ✅       | unblock                        |
-|       ✅       | sound                              |
-|       ✅       | tsticker                    |
-|       ✅       | nulis                             |
-|       ✅       | meme                           |
-|       ✅       | memeindo                     |
-|       ✅       | ocr                      |
-|       ✅       | clone                            |
-|       ✅       | bc                          |
-|       ✅       | leave                             |
-|       ✅       | url2img                           |
-|       ✅       | wait                          |
-|            info/donate/creator                  |
 
 Ket: Aktiv 24 jam
 
