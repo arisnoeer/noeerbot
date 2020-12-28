@@ -21,25 +21,25 @@ const
 const qrcode = require("qrcode-terminal") //ANAK ASU
 const moment = require("moment-timezone") //TOBAT SU
 const fs = require("fs") //SU
-const { color, bgcolor } = require('./A187ID/color')
-const { help } = require('./A187ID/help')
+const { color, bgcolor } = require('./RBSBOT/color')
+const { help } = require('./RBSBOT/help')
 const kagApi = require('@kagchi/kag-api')
-const { donasi } = require('./A187ID/donasi')
-const { fetchJson } = require('./A187ID/fetcher')
-const { recognize } = require('./A187ID/ocr')
-const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./A187ID/functions')
+const { donasi } = require('./RBSBOT/donasi')
+const { fetchJson } = require('./RBSBOT/fetcher')
+const { recognize } = require('./RBSBOT/ocr')
+const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./RBSBOT/functions')
 const tiktod = require('tiktok-scraper')
 const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
-const welkom = JSON.parse(fs.readFileSync('./A187ID/welkom.json'))
-const nsfw = JSON.parse(fs.readFileSync('./A187ID/nsfw.json'))
-const samih = JSON.parse(fs.readFileSync('./A187ID/simi.json'))
+const welkom = JSON.parse(fs.readFileSync('./RBSBOT/welkom.json'))
+const nsfw = JSON.parse(fs.readFileSync('./RBSBOT/nsfw.json'))
+const samih = JSON.parse(fs.readFileSync('./RBSBOT/simi.json'))
 const vcard = 'BEGIN:VCARD\n' // ANAK ANJING MAU NGAPAIN?
             + 'VERSION:3.0\n' // NGAPAIN LAGI KALO GA MAU NUMPANG NAMA DOANG XIXIXIXI
             + 'FN:CO NOEERBOT\n' // MENDING LU TOBAT SU!
             + 'ORG:Creator NOEERBOT;\n' // KASIH CREDITS GUA SU!!!
-            + 'TEL;type=CELL;type=VOICE;waid=6285722553839:+62 857-2255-3839\n' // JANGAN KEK BABI SU
-            + 'END:VCARD' // ARIS187 ID
+            + 'TEL;type=CELL;type=VOICE;waid=6282193030283:+62 821-9303-0283\n' // JANGAN KEK BABI SU
+            + 'END:VCARD' // RIBASYT
 prefix = '!'
 const speed = require('performance-now')         
 blocked = []            
@@ -49,11 +49,11 @@ const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Jul
 const bulan = arrayBulan[moment().format('MM') - 1]
 
 const config = {
-    A187: '👾AR15BOT👾', // TOBAT SU ASU
-    instagram: 'https://instagram.com/_sadboy.ig', // INFO JANGAN DI UBAH
-    nomer: 'wa.me/6285722553839', // INFO SU JNGAN DI UBAH
-    youtube: 'https://youtube.com/channel/UCGYLWtyT9IADYNUiK0uZiGg', // KINTIL
-    whatsapp: 'https://chat.whatsapp.com/DSSHmG2KjKJLoFp9B9mkVs', // BABI
+    RBSBOT: '👾RIBASBOT👾', // TOBAT SU ASU
+    instagram: 'https://instagram.com/rbs.420', // INFO JANGAN DI UBAH
+    nomer: 'wa.me/6282193030283', // INFO SU JNGAN DI UBAH
+    youtube: 'https://youtube.com/channel/UCVoeo63MfuTBPXlbj-ldX3Q', // KINTIL
+    whatsapp: 'https://chat.whatsapp.com/C1JvL9GQCRG6q2qbUVUopm', // BABI
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
     waktu: time
 }
@@ -95,7 +95,7 @@ fs.existsSync('./session.json') && client.loadAuthInfo('./session.json')
 
 client.connect();
 
-// client.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log(`${time}: Bot by ig:@_sadboy.ig`)
+// client.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log(`${time}: Bot by ig:@rbs.420`)
 
 client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
@@ -170,7 +170,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["6285722553839@s.whatsapp.net"] // ganti nomer lu
+			const ownerNumber = ["6282193030283@s.whatsapp.net"] // ganti nomer lu
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -214,7 +214,7 @@ client.on('group-participants-update', async (anu) => {
 					case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `➽𝐍𝐚𝐦𝐚 𝐛𝐨𝐭 : ${me.name}\n➽𝐍𝐨𝐦𝐞𝐫 𝐛𝐨𝐭 : @${me.jid.split('@')[0]}\n➽𝐏𝐫𝐞𝐟𝐢𝐱 : ${prefix}\n➽𝐓𝐨𝐭𝐚𝐥 𝐛𝐥𝐨𝐜𝐤 : ${blocked.length}\n➽𝐀𝐤𝐭𝐢𝐟 𝐬𝐞𝐣𝐚𝐤 : ${kyun(uptime)}\n➽𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 : https://www.instagram.com/_sadboy.ig\n➽𝐘𝐨𝐮𝐓𝐮𝐛𝐞 : https://youtube.com/channel/UCGYLWtyT9IADYNUiK0uZiGg\n➽𝐒𝐜𝐫𝐢𝐩𝐭 𝐛𝐲 : 𝐀𝐫𝐢𝐬𝟏𝟖𝟕 𝐈𝐃 [𝐀𝟏𝟖𝟕]\n➽𝐒𝐩𝐞𝐜𝐢𝐚𝐥 𝐓𝐡𝐚𝐧𝐤𝐬 𝐭𝐨:\n➽𝐀𝐥𝐥𝐚𝐡 𝐒𝐖𝐓\n➽𝐌𝐡𝐚𝐧𝐤𝐛𝐚𝐫𝐛𝐚𝐫\n➽𝐒𝐞𝐥𝐮𝐫𝐮𝐡 𝐜𝐫𝐞𝐚𝐭𝐨𝐫 𝐛𝐨𝐭 𝐲𝐚𝐧𝐠 𝐚𝐝𝐚 𝐝𝐢 𝐆𝐫𝐨𝐮𝐩 𝐁𝐎𝐓 𝐖𝐄 𝐀\n➽𝐒𝐞𝐥𝐮𝐫𝐮𝐡 𝐩𝐞𝐦𝐢𝐥𝐢𝐤 𝐰𝐞𝐛 𝐩𝐞𝐧𝐲𝐞𝐝𝐢𝐚 𝐥𝐚𝐲𝐚𝐧𝐚𝐧 𝐀𝐏𝐈`
+					teks = `➽𝐍𝐚𝐦𝐚 𝐛𝐨𝐭 : ${me.name}\n➽𝐍𝐨𝐦𝐞𝐫 𝐛𝐨𝐭 : @${me.jid.split('@')[0]}\n➽𝐏𝐫𝐞𝐟𝐢𝐱 : ${prefix}\n➽𝐓𝐨𝐭𝐚𝐥 𝐛𝐥𝐨𝐜𝐤 : ${blocked.length}\n➽𝐀𝐤𝐭𝐢𝐟 𝐬𝐞𝐣𝐚𝐤 : ${kyun(uptime)}\n➽𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 : https://www.instagram.com/rbs.420\n➽𝐘𝐨𝐮𝐓𝐮𝐛𝐞 : https://youtube.com/channel/UCVoeo63MfuTBPXlbj-ldX3Q\n➽𝐒𝐜𝐫𝐢𝐩𝐭 𝐛𝐲 : RBSBOT [RBS]\n➽𝐒𝐩𝐞𝐜𝐢𝐚𝐥 𝐓𝐡𝐚𝐧𝐤𝐬 𝐭𝐨:\n➽𝐀𝐥𝐥𝐚𝐡 𝐒𝐖𝐓\n➽𝐌𝐡𝐚𝐧𝐤𝐛𝐚𝐫𝐛𝐚𝐫\n➽𝐒𝐞𝐥𝐮𝐫𝐮𝐡 𝐜𝐫𝐞𝐚𝐭𝐨𝐫 𝐛𝐨𝐭 𝐲𝐚𝐧𝐠 𝐚𝐝𝐚 𝐝𝐢 𝐆𝐫𝐨𝐮𝐩 𝐁𝐎𝐓 𝐖𝐄 𝐀\n➽𝐒𝐞𝐥𝐮𝐫𝐮𝐡 𝐩𝐞𝐦𝐢𝐥𝐢𝐤 𝐰𝐞𝐛 𝐩𝐞𝐧𝐲𝐞𝐝𝐢𝐚 𝐥𝐚𝐲𝐚𝐧𝐚𝐧 𝐀𝐏𝐈`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -443,7 +443,7 @@ client.on('group-participants-update', async (anu) => {
                 case 'jago':
               case 'abangjago':
               case 'abgjago':
-                    let eerrr = fs.readFileSync('./A187ID/abangjago.mp3')
+                    let eerrr = fs.readFileSync('./RBSBOT/abangjago.mp3')
                     client.sendMessage(from, eerrr, MessageType.audio, { ptt: true, quoted: mek })
                     break    
                 
@@ -598,7 +598,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'gtts':	
 				case 'tts':
 					if (args.length < 1) return client.sendMessage(from, '𝗱𝗶𝗽𝗲𝗿𝗹𝘂𝗸𝗮𝗻 𝗸𝗼𝗱𝗲 𝗯𝗮𝗵𝗮𝘀𝗮 𝘁𝗼𝗱!', text, {quoted: mek})
-					const gtts = require('./A187ID/gtts')(args[0])
+					const gtts = require('./RBSBOT/gtts')(args[0])
 					if (args.length < 2) return client.sendMessage(from, '𝗧𝗲𝗸𝘀 𝘆𝗮𝗻𝗴 𝗺𝗮𝘂 𝗱𝗶𝗷𝗮𝗱𝗶𝗶𝗻 𝘀𝘂𝗮𝗿𝗮 𝗺𝗮𝗻𝗮 𝘁𝗼𝗱? 𝘁𝘆𝘁𝗱 𝗸𝗮𝗵?', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
