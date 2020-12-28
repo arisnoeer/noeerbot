@@ -31,10 +31,7 @@ const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRando
 const tiktod = require('tiktok-scraper')
 const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
- 
 const welkom = JSON.parse(fs.readFileSync('./A187ID/welkom.json'))
-const ban = JSON.parse(fs.readFileSync('./A187ID/banned.json'))
- 
 const nsfw = JSON.parse(fs.readFileSync('./A187ID/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./A187ID/simi.json'))
 const vcard = 'BEGIN:VCARD\n' // ANAK ANJING MAU NGAPAIN?
