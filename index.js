@@ -21,22 +21,22 @@ const
 const qrcode = require("qrcode-terminal") //ANAK ASU
 const moment = require("moment-timezone") //TOBAT SU
 const fs = require("fs") //SU
-const { color, bgcolor } = require('./lib/color')
-const { help } = require('./lib/help')
+const { color, bgcolor } = require('./A187ID/color')
+const { help } = require('./A187ID/help')
 const kagApi = require('@kagchi/kag-api')
-const { donasi } = require('./lib/donasi')
-const { fetchJson } = require('./lib/fetcher')
-const { recognize } = require('./lib/ocr')
-const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
+const { donasi } = require('./A187ID/donasi')
+const { fetchJson } = require('./A187ID/fetcher')
+const { recognize } = require('./A187ID/ocr')
+const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./A187ID/functions')
 const tiktod = require('tiktok-scraper')
 const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
  
-const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
-const ban = JSON.parse(fs.readFileSync('./src/banned.json'))
+const welkom = JSON.parse(fs.readFileSync('./A187ID/welkom.json'))
+const ban = JSON.parse(fs.readFileSync('./A187ID/banned.json'))
  
-const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
-const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
+const nsfw = JSON.parse(fs.readFileSync('./A187ID/nsfw.json'))
+const samih = JSON.parse(fs.readFileSync('./A187ID/simi.json'))
 const vcard = 'BEGIN:VCARD\n' // ANAK ANJING MAU NGAPAIN?
             + 'VERSION:3.0\n' // NGAPAIN LAGI KALO GA MAU NUMPANG NAMA DOANG XIXIXIXI
             + 'FN:CO NOEERBOT\n' // MENDING LU TOBAT SU!
@@ -601,7 +601,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'gtts':	
 				case 'tts':
 					if (args.length < 1) return client.sendMessage(from, '𝗱𝗶𝗽𝗲𝗿𝗹𝘂𝗸𝗮𝗻 𝗸𝗼𝗱𝗲 𝗯𝗮𝗵𝗮𝘀𝗮 𝘁𝗼𝗱!', text, {quoted: mek})
-					const gtts = require('./lib/gtts')(args[0])
+					const gtts = require('./A187ID/gtts')(args[0])
 					if (args.length < 2) return client.sendMessage(from, '𝗧𝗲𝗸𝘀 𝘆𝗮𝗻𝗴 𝗺𝗮𝘂 𝗱𝗶𝗷𝗮𝗱𝗶𝗶𝗻 𝘀𝘂𝗮𝗿𝗮 𝗺𝗮𝗻𝗮 𝘁𝗼𝗱? 𝘁𝘆𝘁𝗱 𝗸𝗮𝗵?', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
