@@ -70,33 +70,26 @@ function kyun(seconds){
   return `${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik`
 }
 
-
-const { tanggal, waktu, instagram, whatsapp, youtube, nomer, ontime } = config
-
-
-
-const { exec } = require("child_process")
-
-const client = new WAConnection()
-
-client.on('qr', qr => {
-   qrcode.generate(qr, { small: true })
-   console.log(`[ ${time} ] QR code is ready, subscribe Aris187 ID`)
-})
-
-client.on('credentials-updated', () => {
-   const authInfo = client.base64EncodedAuthInfo()
-   console.log(`credentials updated!`)
-
-   fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
-})
-
-fs.existsSync('./session.json') && client.loadAuthInfo('./session.json')
-
-client.connect();
-
-// client.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log(`${time}: Bot by ig:@_sadboy.ig`)
-
+async function starts() {
+	const client = new WAConnection()
+	client.logger.level = 'warn'
+	console.log(banner.string)
+	client.on('qr', () => {
+		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code above'))
+	})
+	client.on('credentials-updated', () => {
+		fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
+		info('2', 'Login Info Updated')
+	})
+	fs.existsSync('./BarBar.json') && client.loadAuthInfo('./BarBar.json')
+	client.on('connecting', () => {
+		start('2', 'Connecting...')
+	})
+	client.on('open', () => {
+		success('2', 'Connected')
+	})
+	await client.connect({timeoutMs: 30*1000})
+	
 client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
 		try {
