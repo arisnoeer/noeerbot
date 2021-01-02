@@ -892,8 +892,8 @@ client.on('group-participants-update', async (anu) => {
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
 		}
-	})
-
+	})	
+starts()
                      
 /*
 *Thanks For 𝗠𝗵𝗮𝗻𝗸𝗕𝗮𝗿𝗕𝗮𝗿
