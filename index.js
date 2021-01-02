@@ -531,7 +531,7 @@ client.on('group-participants-update', async (anu) => {
 							})
 							.on('error', function (err) {
 								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
+								
 								reply(mess.error.stick)
 							})
 							.on('end', function () {
@@ -555,7 +555,7 @@ client.on('group-participants-update', async (anu) => {
 							})
 							.on('error', function (err) {
 								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
+								
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 								reply(`𝗬𝗲𝗮𝗵 𝗴𝗮𝗴𝗮𝗹 ;(, 𝘂𝗹𝗮𝗻𝗴𝗶 𝗹𝗮𝗴𝗶 𝘆𝗮𝗵 𝘁𝗼𝗱 ^_^`)
 							})
