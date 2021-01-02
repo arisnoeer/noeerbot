@@ -893,6 +893,7 @@ client.on('group-participants-update', async (anu) => {
 			console.log('Error : %s', color(e, 'red'))
 		}
 	})	
+	}
 starts()
                      
 /*
